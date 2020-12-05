@@ -90,9 +90,9 @@ public class FileHandler {
 						Matcher match = pattern.matcher(fileName);
 						if(match.matches()) {
 							validFileName = true;
-							
-							toWrite = "TESTOMG";
 							createAFile(fileName);
+							System.out.println("Enter what you would like to write: ");
+							toWrite = scan.next();
 							writeToFile(fileName, toWrite);
 						}else {
 							System.out.println("Please enter a valid file name");
@@ -103,7 +103,7 @@ public class FileHandler {
 				case 2:
 					validOperation = true;
 					System.out.println("Enter file name: ");
-					while(validFileName = false) {
+					while(validFileName == false) {
 						fileName = scan.next();
 						Matcher match = pattern.matcher(fileName);
 						if(match.matches()) {
