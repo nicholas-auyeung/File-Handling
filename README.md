@@ -21,7 +21,7 @@ This program validates user inputted file name and can perform the following ope
 
 ## Usage
 	Once run, the console will welcome and prompt the user for the operation that they want to perform.
-![](screenshots/welcome.png)
+![](screenshots/welcome2.png)
 
 User selects operation 1
 	
