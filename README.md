@@ -27,13 +27,18 @@ User selects operation 1
 	A prompt for a file name will appear, enter file name. If file name does not exists user will see 'File creation succeeded', otherwise if the file name exists 'File already exists'.
 ![](screenshots/file_creation.png)
 
-	A prompt for the data to be written will appear, enter the data to write. If writ is successful user will see 'Write successful'
+	A prompt for the data to be written will appear, enter the data to write. If write is successful user will see 'Write successful'.
 ![](screenshots/write_success.png)
 
 User selects operation 2
+	
+	A prompt for a file name will appear, enter file name. If file name does not exists user will see 'File is not found', otherwise if the file name exists the current contents of the file will be output.
+![](screenshots/write_success.png)	
+
+User selects operation 3
 
 	A prompt for a file name will appear, enter file name. If file name does not exists user will see 'File is not found', otherwise if the file name exists the current contents of the file will be output.
-![](screenshots/existing_content.png)
+![](screenshots/read_success.png)
 
-	A prompt for the data to be appended will appear, enter the data to append. If append is successful user will see 'Append successful'
+	A prompt for the data to be appended will appear, enter the data to append. If append is successful user will see 'Append successful'.
 ![](screenshots/append_success.png)

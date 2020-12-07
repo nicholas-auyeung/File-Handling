@@ -89,7 +89,8 @@ public class FileHandler {
 		while(validOperation == false) {
 			System.out.println("Which of the follow operations would you like to perform: ");
 			System.out.println("(1) Create a new file and write");
-			System.out.println("(2) Read from an existing file and append");
+			System.out.println("(2) Read from an existing file");
+			System.out.println("(3) Read from an existing file and append");
 			choice = scan.next();
 			if(isNumeric(choice)) {
 				validOperation = true;
@@ -117,6 +118,20 @@ public class FileHandler {
 					break;
 				//operation to append to an existing file
 				case 2:
+					System.out.println("Enter file name: ");
+					while(validFileName == false) {
+						fileName = scan.next();
+						scan.nextLine();
+						Matcher match = pattern.matcher(fileName);
+						if(match.matches()) {
+							validFileName = true;
+							readFromFile(fileName);
+						}else {
+							System.out.println("Please enter a valid existing file name");
+						}
+					}
+					break;
+				case 3:
 					System.out.println("Enter file name: ");
 					while(validFileName == false) {
 						fileName = scan.next();
