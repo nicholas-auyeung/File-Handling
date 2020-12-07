@@ -14,6 +14,16 @@ public class FileHandler {
 	
 	public static final String FILEREGEX = "^[A-Za-z0-9_.-]+$";
 	
+	
+	public static boolean isNumeric(String str) { 
+		  try {  
+		    Integer.parseInt(str);
+		    return true;
+		  } catch(NumberFormatException e){  
+		    return false;  
+		  }  
+	}
+	
 	public static void createAFile(String fileName) {
 		try {
 			File file = new File(fileName);
@@ -75,24 +85,30 @@ public class FileHandler {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Welcome to File Handler" + "\n");
-		System.out.println("Which of the follow operations would you like to perform: ");
-		System.out.println("(1) Create a new file and write");
-		System.out.println("(2) Read from an existing file and append");
-		choice = scan.next();
+		
 		while(validOperation == false) {
+			System.out.println("Which of the follow operations would you like to perform: ");
+			System.out.println("(1) Create a new file and write");
+			System.out.println("(2) Read from an existing file and append");
+			choice = scan.next();
+			if(isNumeric(choice)) {
+				validOperation = true;
+			}
+			
+		}
 			switch(Integer.parseInt(choice)){
 				//operation to create and write into a new file
 				case 1:
-					validOperation = true;
 					System.out.println("Enter file name: ");
 					while(validFileName == false) {
 						fileName = scan.next();
+						scan.nextLine();
 						Matcher match = pattern.matcher(fileName);
 						if(match.matches()) {
 							validFileName = true;
 							createAFile(fileName);
 							System.out.println("Enter what you would like to write: ");
-							toWrite = scan.next();
+							toWrite = scan.nextLine();
 							writeToFile(fileName, toWrite);
 						}else {
 							System.out.println("Please enter a valid file name");
@@ -101,10 +117,10 @@ public class FileHandler {
 					break;
 				//operation to append to an existing file
 				case 2:
-					validOperation = true;
 					System.out.println("Enter file name: ");
 					while(validFileName == false) {
 						fileName = scan.next();
+						scan.nextLine();
 						Matcher match = pattern.matcher(fileName);
 						if(match.matches()) {
 							validFileName = true;
@@ -114,15 +130,14 @@ public class FileHandler {
 						}
 					}
 					System.out.println("Enter the text that you like to append to " + fileName);
-					appending = scan.next();
+					appending = scan.nextLine();
 					appendToFile(fileName, appending);
 					System.out.println("Append successful");
 					break;
 				default:
-					System.out.println("Please enter a valid option");
+					System.out.println("Please re-run and enter a valid option");
 					break;
 			}
-		}
 		scan.close();
 	}
 
