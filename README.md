@@ -5,8 +5,9 @@ This program validates user inputted file name and can perform the following ope
 ## Features
 
 	- Creates file if file name does not already exists
-	- Write to newly created or existing files
-	- Append to newly created or existing files
+	- Read from a newly created or existing file
+	- Write to newly created or existing file
+	- Append to newly created or existing file
 
 ## Installation
 
@@ -33,12 +34,12 @@ User selects operation 1
 User selects operation 2
 	
 	A prompt for a file name will appear, enter file name. If file name does not exists user will see 'File is not found', otherwise if the file name exists the current contents of the file will be output.
-![](screenshots/write_success.png)	
+![](screenshots/read_success.png)	
 
 User selects operation 3
 
 	A prompt for a file name will appear, enter file name. If file name does not exists user will see 'File is not found', otherwise if the file name exists the current contents of the file will be output.
-![](screenshots/read_success.png)
+![](screenshots/existing_content.png)
 
 	A prompt for the data to be appended will appear, enter the data to append. If append is successful user will see 'Append successful'.
 ![](screenshots/append_success.png)
